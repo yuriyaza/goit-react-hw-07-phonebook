@@ -35,13 +35,10 @@ export const App = () => {
       Notify.failure(`${newContact.name} is already in contacts`);
       return;
     }
-    // dispatch(contactSlice.actions.addContact(newContact));
     dispatch(addContact(newContact));
-
   };
 
   const onDeleteContact = id => {
-    // dispatch(contactSlice.actions.deleteContact(id));
     dispatch(deleteContact(id));
   };
 
