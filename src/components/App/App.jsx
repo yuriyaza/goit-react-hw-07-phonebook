@@ -14,9 +14,7 @@ import css from './App.module.css';
 Notify.init({ showOnlyTheLastOne: true, clickToClose: true });
 
 export const App = () => {
-  const contacts = useSelector(state => state.contactState.contacts.items);
-  const error = useSelector(state => state.contactState.contacts.error);
-  const isLoading = useSelector(state => state.contactState.contacts.isLoading);
+  const { items, error, isLoading } = useSelector(state => state.contactState.contacts);
   const filter = useSelector(state => state.contactState.filter);
   const dispatch = useDispatch();
 
@@ -29,7 +27,7 @@ export const App = () => {
   }, [error]);
 
   const onAddContact = newContact => {
-    const nameList = contacts.map(contact => contact.name.toLowerCase());
+    const nameList = items.map(contact => contact.name.toLowerCase());
 
     if (nameList.includes(newContact.name.toLowerCase())) {
       Notify.failure(`${newContact.name} is already in contacts`);
@@ -46,7 +44,7 @@ export const App = () => {
     dispatch(contactSlice.actions.setFilter(filter));
   };
 
-  const filteredContacts = contacts.filter(contact => contact.name.toLowerCase().includes(filter.toLowerCase()));
+  const filteredContacts = items.filter(contact => contact.name.toLowerCase().includes(filter.toLowerCase()));
 
   return (
     <div className={css.container}>
