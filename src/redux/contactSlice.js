@@ -1,6 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
 
 export const contactSlice = createSlice({
   name: 'contactState',
@@ -29,14 +27,3 @@ export const contactSlice = createSlice({
     },
   },
 });
-
-const persistConfig = {
-  key: 'phonebook',
-  storage,
-  whitelist: ['contacts'],
-};
-
-export const persistedContactSlice = persistReducer(
-  persistConfig,
-  contactSlice.reducer
-);
