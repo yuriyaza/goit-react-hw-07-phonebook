@@ -4,23 +4,27 @@ export const contactSlice = createSlice({
   name: 'contactState',
 
   initialState: {
-    contacts: [
-      // Якщо в Local Storage даних немає -
-      // використовуємо початкові дані для демонстрації
-      { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-      { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-      { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-      { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-    ],
+    contacts: {
+      items: [
+        // Якщо на Backend даних немає - використовуємо
+        // початкові дані для демонстрації
+        { id: 'id-1', name: 'Rosie Simpson', number: '758-737-0979' },
+        { id: 'id-2', name: 'Hermione Kline', number: '211-792-1896' },
+        { id: 'id-3', name: 'Eden Clements', number: '551-240-3374' },
+        { id: 'id-4', name: 'Annie Copeland', number: '205-226-1087' },
+      ],
+      isLoading: false,
+      error: null,
+    },
     filter: '',
   },
 
   reducers: {
     addContact(state, actions) {
-      state.contacts = [...state.contacts, actions.payload];
+      state.contacts.items = [...state.contacts.items, actions.payload];
     },
     deleteContact(state, action) {
-      state.contacts = state.contacts.filter(contact => contact.id !== action.payload);
+      state.contacts.items = state.contacts.items.filter(contact => contact.id !== action.payload);
     },
     setFilter(state, action) {
       state.filter = action.payload;

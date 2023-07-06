@@ -11,7 +11,7 @@ import css from './App.module.css';
 Notify.init({ showOnlyTheLastOne: true, clickToClose: true });
 
 export const App = () => {
-  const contacts = useSelector(state => state.contactState.contacts);
+  const contacts = useSelector(state => state.contactState.contacts.items);
   const filter = useSelector(state => state.contactState.filter);
   const dispatch = useDispatch();
 
