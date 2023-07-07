@@ -5,7 +5,7 @@ export const Spinner = () => {
   return (
     <div className={css.backdrop}>
       <div className={css.spinner}>
-        <RotatingLines strokeWidth='3' strokeColor='grey' />
+        <RotatingLines width='60' strokeWidth='3' strokeColor='grey' />
       </div>
     </div>
   );
