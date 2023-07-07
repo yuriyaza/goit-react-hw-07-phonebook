@@ -5,14 +5,7 @@ export const contactSlice = createSlice({
   name: 'contactState',
 
   initialState: {
-    contacts: [
-      // Якщо на Backend даних немає - можна використати початкові
-      // дані для демонстрації:
-      // { id: 'id-1', name: 'Rosie Simpson', number: '685-941-0712' },
-      // { id: 'id-2', name: 'Hermes Kline', number: '608-525-9356' },
-      // { id: 'id-3', name: 'Eden Clements', number: '610-240-8476' },
-      // { id: 'id-4', name: 'Annie Copeland', number: '587-817-7905' },
-    ],
+    contacts: [],
     filter: '',
     error: null,
     isLoading: false,
