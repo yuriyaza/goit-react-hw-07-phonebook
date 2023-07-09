@@ -6,5 +6,3 @@ export const store = configureStore({
     contactState: contactSlice.reducer,
   },
 });
-
-//
