@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { v4 as uuid } from 'uuid';
-import PropTypes from 'prop-types';
 import css from './ContactForm.module.css';
 
 export const ContactForm = ({ onAddContact }) => {
@@ -73,9 +72,4 @@ export const ContactForm = ({ onAddContact }) => {
       </button>
     </form>
   );
-};
-
-ContactForm.types = {
-  name: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
 };

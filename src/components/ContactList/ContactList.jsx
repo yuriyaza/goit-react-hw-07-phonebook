@@ -1,6 +1,5 @@
 import { FaUserCircle } from 'react-icons/fa';
 import { BsTrash } from 'react-icons/bs';
-import PropTypes from 'prop-types';
 
 import { getRandomColor } from 'js/getRandomColor';
 import css from './ContactList.module.css';
@@ -30,9 +29,4 @@ export const ContactList = ({ contacts, onDeleteContact }) => {
       })}
     </ul>
   );
-};
-
-ContactList.types = {
-  contacts: PropTypes.object.isRequired,
-  onDeleteContact: PropTypes.func.isRequired,
 };

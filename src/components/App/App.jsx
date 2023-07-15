@@ -14,7 +14,7 @@ import css from './App.module.css';
 Notify.init({ showOnlyTheLastOne: true, clickToClose: true });
 
 export const App = () => {
-  const { contacts, filter, error, isLoading } = useSelector(state => state.contactState);
+  const { contacts, filter, error, isLoading } = useSelector(store => store.contactSlice);
   const dispatch = useDispatch();
 
   useEffect(() => {

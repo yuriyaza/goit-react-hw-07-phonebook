@@ -3,6 +3,6 @@ import { contactSlice } from './contactSlice';
 
 export const store = configureStore({
   reducer: {
-    contactState: contactSlice.reducer,
+    contactSlice: contactSlice.reducer,
   },
 });
