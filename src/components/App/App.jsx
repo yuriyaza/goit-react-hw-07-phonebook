@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { contactSlice } from 'redux/contactSlice';
+import { phoneBook } from 'redux/phonebook/slice';
 import { Notify } from 'notiflix';
 
-import { fetchContacts, addContact, deleteContact } from 'redux/operations';
+import { fetchContacts, addContact, deleteContact } from 'redux/phonebook/api';
 
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
@@ -14,7 +14,7 @@ import css from './App.module.css';
 Notify.init({ showOnlyTheLastOne: true, clickToClose: true });
 
 export const App = () => {
-  const { contacts, filter, error, isLoading } = useSelector(store => store.contactSlice);
+  const { contacts, filter, error, isLoading } = useSelector(state => state.phoneBook);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export const App = () => {
   };
 
   const onSetFilter = filter => {
-    dispatch(contactSlice.actions.setFilter(filter));
+    dispatch(phoneBook.actions.setFilter(filter));
   };
 
   const filteredContacts = contacts.filter(contact => contact.name.toLowerCase().includes(filter.toLowerCase()));

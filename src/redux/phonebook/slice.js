@@ -1,8 +1,8 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
-import { fetchContacts, addContact, deleteContact } from './operations';
+import { fetchContacts, addContact, deleteContact } from './api';
 
-export const contactSlice = createSlice({
-  name: 'contactSlice',
+export const phoneBook = createSlice({
+  name: 'phoneBook',
 
   initialState: {
     contacts: [],
